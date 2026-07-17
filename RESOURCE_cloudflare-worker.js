@@ -14,7 +14,7 @@ export default {
     }
 
     const apiKey = env.OPENAI_API_KEY;
-    const apiUrl = "https://api.openai.com/v1/chat/completions";
+    const apiUrl = "prj-loreal-chatbot.patel7au.workers.dev";
 
     if (!apiKey) {
       return new Response(

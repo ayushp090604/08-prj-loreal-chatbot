@@ -8,7 +8,7 @@ const sendButton = document.getElementById("sendBtn");
 // Otherwise, paste your own OpenAI key into secrets.js for local testing.
 const workerUrl = (window.LOREAL_WORKER_URL || "").trim();
 const directApiKey = (window.OPENAI_API_KEY || "").trim();
-const placeholderUrl = "https://loreal-chatbot.your-subdomain.workers.dev/";
+const placeholderUrl = "https://api.openai.com/v1/chat/completions";
 
 const systemPrompt = `You are the L'Oréal Beauty Assistant. Help with L'Oréal skincare, makeup, haircare, fragrance, and beauty routines. Keep answers short, friendly, and helpful. If a question is unrelated to L'Oréal products, routines, recommendations, or beauty topics, politely refuse and redirect the conversation back to beauty and L'Oréal guidance.`;
 
@@ -121,6 +121,7 @@ chatForm.addEventListener("submit", async (e) => {
         headers: {
           Authorization: `Bearer ${directApiKey}`,
           "Content-Type": "application/json",
+      
         },
         body: JSON.stringify({
           model: "gpt-4.1",
