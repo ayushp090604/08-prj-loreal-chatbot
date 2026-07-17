@@ -16,15 +16,7 @@ export default {
     const apiKey = env.OPENAI_API_KEY;
     const apiUrl = "prj-loreal-chatbot.patel7au.workers.dev";
 
-    if (!apiKey) {
-      return new Response(
-        JSON.stringify({
-          error: "The worker is missing the OPENAI_API_KEY secret.",
-        }),
-        { status: 500, headers: corsHeaders },
-      );
-    }
-
+  
     const userInput = await request.json();
 
     const requestBody = {
